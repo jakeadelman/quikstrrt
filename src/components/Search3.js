@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 var suggest = require('suggestion');
 var sugers = []
 class Search extends React.Component {
@@ -11,7 +11,8 @@ class Search extends React.Component {
         }
     this.getInfo = this.getInfo.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    }
+    this.handleSearchClick = this.handleSearchClick.bind(this);
+  }
 
   getInfo = async () => {
       
@@ -27,6 +28,21 @@ class Search extends React.Component {
       sugers = []};
         
     ///} else {this.setState({results: sugers});}
+  }
+  handleSearchClick = (e) => {
+    e.preventDefault();
+    var args = e.target.textContent;
+    var arr = args.replace(" ","+")
+    console.log(arr)
+    window.location = "https://google.ca/search?q="+arr;
+    ///console.log(e.target.textContent);
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    var args = e.target[0].value
+    var arr = args.replace(" ","+")
+    window.location = "https://google.ca/search?q="+arr;
+    ///console.log(e.target.textContent);
   }
 
   handleInputChange = () => {
@@ -53,23 +69,27 @@ class Search extends React.Component {
         }
         console.log(arr[0]);
         if (arr[0]){
-        var thatty = arr[0].map(r=>{return <li key={Math.random()*10000}>{r}</li>})
+        var thatty = arr[0].map(r=>{return <button className="singleMap" onClick={(e)=> this.handleSearchClick(e)} key={Math.random()*10000}>{r}</button>})
         return thatty;
         }}
 
     return (
     <div className="impdiv">
-      <form className="impform">
+      <form onSubmit={(e)=>this.handleSubmit(e)} className="impform">
         <input
-          placeholder="Search.. (e.g. pet waffles)"
+          placeholder="Search.."
           ref={input => this.search = input}
           onChange={this.handleInputChange}
           className="imp"
         />
       </form>
+      {this.state.results.length>0? <div className="mappedBack">
       <div className="mapped">
+      
     {map()}
+
       </div>
+      </div>: null}
       </div>
     )
   }

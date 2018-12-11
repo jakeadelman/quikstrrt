@@ -18,7 +18,6 @@
 }
 .furtherback {
   min-height:100vh;
-  background-image: url("./imgs/img3.jpg");
   background-size: cover;
   background-position: center;
   padding: 0;
@@ -35,12 +34,19 @@
 
 
 .mapped {
-  padding: auto;
-  background-color: rgba(255,255,255,0.35);
-  max-height:200px;
-  width:10em;
+  background-color: rgba(255,255,255,0.85);
+  max-height:auto;
+  max-width: 100%;
   margin:0 auto;
+  margin-top: 3em;
+  padding: 1em;
+  text-align: center;
 }
+.mappedBack {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
 .imp{
   max-height:100px;
   height: 3em;
@@ -56,4 +62,65 @@
   height: 2em;
   margin: 0 auto;
 
+}
+.singleMap {
+  padding: 0.1em;
+  margin: 0.25em;
+  background: none;
+  background-color: none;
+  border-color: rgba(0, 0, 0, 0.2);
+  border: 1px dotted;
+  font-size: 1.04em;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.singleMap:hover {
+  background-color: #ff69b4;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.singleMap:active {
+  background-color: #ff69b4;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.impdiv {
+  margin: 0 auto;
+}
+ul {
+  list-style-type: none
+}
+
+div, p, input {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.pic-button-div {
+  float: left;
+  padding-left:0px;
+  margin-left: 0px;
+  max-height: auto;
+
+}
+.rndm-div {
+  height: auto;
+  width: auto;
+
+}
+
+.inner-image {
+  position: absolute;
+  margin: 0;
+}
+.inner-image-2 {
+  margin-top: 110px;
+}
+.inner-image-3 {
+  margin-top: 220px;
+}
+.inner-image-4 {
+  margin-top: 330px;
+}
+.inner-image-5 {
+  margin-top: 440px;
 }
