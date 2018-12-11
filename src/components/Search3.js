@@ -1,5 +1,4 @@
 import React from 'react'
-import Suggestions from './Suggestions';
 var suggest = require('suggestion');
 var sugers = []
 class Search extends React.Component {
@@ -24,8 +23,8 @@ class Search extends React.Component {
     
       sugers.push(sugs)
         }); 
-      this.setState({results: sugers, areResults: true});
-      sugers = []
+      if(sugers.length){this.setState({results: sugers, areResults: true});
+      sugers = []};
         
     ///} else {this.setState({results: sugers});}
   }
@@ -59,12 +58,13 @@ class Search extends React.Component {
         }}
 
     return (
-    <div>
-      <form>
+    <div className="impdiv">
+      <form className="impform">
         <input
-          placeholder="<< search >>"
+          placeholder="Search.. (e.g. pet waffles)"
           ref={input => this.search = input}
           onChange={this.handleInputChange}
+          className="imp"
         />
       </form>
       <div className="mapped">
