@@ -46,16 +46,25 @@ class Search extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     var args = e.target[0].value
-    var arr = args.replace(" ", "+")
-    window.location = "https://google.ca/search?q=" + arr;
-    ///console.log(e.target.textContent);
+    if (args === '/tv') {
+      window.location = "https://tradingview.com/chart"
+    } else if (args === '/bf') {
+      window.location = "https://bitfinex.com/"
+    } else if (args === '/do') {
+      window.location = "https://digitalocean.com/login/"
+    } else {
+      var arr = args.replace(" ", "+", 10)
+      window.location = "https://google.ca/search?q=" + arr;
+      ///console.log(e.target.textContent);
+    }
   }
 
   handleInputChange = () => {
     this.setState({
       query: this.search.value
     }, () => {
-      if (this.state.query && this.state.query.length > 1) {
+      if (this.state.query && this.state.query.length > 1 && this.state.query.charAt(0) !== "/") {
+
         if (this.state.query.length % 2 === 0) {
           this.getInfo();
         }
@@ -72,7 +81,6 @@ class Search extends React.Component {
         <a href="https://gmail.com/"><img className="logo-img" src="/images/google.svg" alt="gisdf" /></a>
         <a href="https://twitch.tv/cryptotraderstv/"><img className="logo-img" src="/images/twitch.svg" alt="gitds" /></a>
         <a href="https://twitter.com/"><img className="logo-img" src="/images/twitter.svg" alt="gidt" /></a>
-        <a href="https://tradingview.com/chart/"><img className="logo-img2" src="/images/stock.svg" alt="gidt" /></a>
 
       </div>
       )
