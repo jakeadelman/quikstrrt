@@ -124,3 +124,27 @@ div, p, input {
 .inner-image-5 {
   margin-top: 440px;
 }
+.pre-log {
+  max-width: 29vh;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.logo-container {
+  float:center;
+  margin-top: 3em;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: auto;
+  width:auto;
+}
+
+img.logo-img {
+  width: 3em;
+
+}
+
+.rss-log {
+  float:right;
+  margin-top:0px;
+}

@@ -1,39 +1,41 @@
 import React from 'react';
 import '../App.css';
-import Search from './Search3';
-import PicButton from './PicButton';
-
+import Search from './Search';
+import { im_def } from './default_image';
 
 class Background extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {background: ''};
-
+        this.state = { background: im_def.toString() };
         this.receiveChildValue = this.receiveChildValue.bind(this);
     }
-    
+
     receiveChildValue = (value) => {
         console.log("Parent received value from child: " + value);
-        this.setState({background: value})
+        this.readIt()
+
+        this.setState({ background: value })
     };
 
 
-    render(){
+
+    render() {
+
+        var backy = this.state.background;
         const styles = {
             furtherback: {
-                backgroundImage: `url(${this.state.background})`
+                backgroundImage: `url(${backy})`
             }
         }
 
-        return(
-           
+        return (
+
             <div className="furtherback" style={styles.furtherback}>
-                
-                    <PicButton fromChildToParentCallback={this.receiveChildValue} />
+
                 <div className="backgrounddiv">
-               
+
                     <Search />
-                
+
                 </div>
             </div>
         )

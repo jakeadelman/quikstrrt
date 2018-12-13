@@ -3,20 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "browserify": "^16.2.3",
+    "browserify-fs": "^1.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
+    "react-svg": "^7.2.2",
     "react-typeahead": "^2.0.0-alpha.8",
+    "read-file": "^0.2.0",
     "semantic-ui-react": "^0.84.0",
     "suggestion": "^2.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start $REACT_APP_IMG",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "babel-start": "babel-node src/index.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

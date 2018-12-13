@@ -1,0 +1,1 @@
+export const im_def = '/images/img4.jpg';
