@@ -144,6 +144,13 @@ img.logo-img {
 
 }
 
+img.logo-img2 {
+  width: 2.35em;
+  padding-bottom:3px;
+  padding-left: 6px;
+
+}
+
 .rss-log {
   float:right;
   margin-top:0px;

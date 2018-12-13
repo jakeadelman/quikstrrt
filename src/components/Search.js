@@ -72,6 +72,7 @@ class Search extends React.Component {
         <a href="https://gmail.com/"><img className="logo-img" src="/images/google.svg" alt="gisdf" /></a>
         <a href="https://twitch.tv/cryptotraderstv/"><img className="logo-img" src="/images/twitch.svg" alt="gitds" /></a>
         <a href="https://twitter.com/"><img className="logo-img" src="/images/twitter.svg" alt="gidt" /></a>
+        <a href="https://tradingview.com/chart/"><img className="logo-img2" src="/images/stock.svg" alt="gidt" /></a>
 
       </div>
       )
