@@ -1,1 +1,1 @@
-export const im_def = '/images/img4.jpg';
+export const im_def = '/images/img2.jpg';
